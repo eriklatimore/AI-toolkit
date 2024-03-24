@@ -1,0 +1,35 @@
+from googletrans import Translator
+
+# Initialize the translator
+translator = Translator()
+
+def translate_text(text, source_lang, target_lang):
+    """
+    Translate text from source language to target language.
+    
+    Args:
+        text (str): Text to translate.
+        source_lang (str): Source language code (e.g., 'en' for English).
+        target_lang (str): Target language code (e.g., 'fr' for French).
+    
+    Returns:
+        str: Translated text.
+    """
+    translation = translator.translate(text, src=source_lang, dest=target_lang)
+    return translation.text
+
+def language_learning_app():
+    print("Welcome to the Language Learning App!")
+    
+    # Prompt user for input
+    text = input("Enter a text to translate: ")
+    source_lang = input("Enter the source language code (e.g., 'en' for English): ")
+    target_lang = input("Enter the target language code (e.g., 'fr' for French): ")
+    
+    # Translate text
+    translated_text = translate_text(text, source_lang, target_lang)
+    print("Translated text:", translated_text)
+
+# Run the language learning app
+if __name__ == "__main__":
+    language_learning_app()
